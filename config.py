@@ -87,3 +87,4 @@ VECTOR_DATA_TYPE_CAPTION = {
 }
 
 TITILER_SERVER = "https://sequestree-titiler-endpoint.hf.space"
+TITILER_SERVER_DEFAULT = "https://giswqs-titiler-endpoint.hf.space"
