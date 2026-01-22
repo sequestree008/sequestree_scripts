@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_page_config(layout="wide") #the modification due to streamlit updates
 from data_resolver import *
 import views.vectors_view as vectors_view
 import views.rasters_view as rasters_view
