@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(layout="wide") #the modification due to streamlit updates
 from data_resolver import *
 import views.vectors_view as vectors_view
 import views.rasters_view as rasters_view
@@ -20,7 +21,7 @@ def build_year_dict(ext):
 option_selected = st.sidebar.selectbox("Choose:", list(OPTION_MAP.keys()), format_func=map_to_value(OPTION_MAP))
 if option_selected == "RASTERS":
     # there are different sidebar options
-    # above ground biomass, tree cabon seq potential
+    # above ground biomass, tree carbon sequestration potential
     data_type = st.sidebar.selectbox("Data Type:", list(AGB_DATA_TYPE_MAP.keys()), format_func=map_to_value(AGB_DATA_TYPE_MAP), key="_sq_data_type")
     model = st.sidebar.selectbox("Model:", list(MODEL_MAP.keys()), format_func=map_to_value(MODEL_MAP), key="_sq_model")
 
