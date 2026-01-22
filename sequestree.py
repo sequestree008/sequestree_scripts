@@ -1,5 +1,5 @@
 import streamlit as st
-st.set_page_config(layout="wide") #ok ilipat ko raw dito kasi yun na yung new rules HAHAHA
+st.set_page_config(layout="wide") #ok ilipat ko raw dito kasi yun na yung new rules HAHAHA (bonakid, tama na pala yung ginawa ko kanina.)
 from data_resolver import *
 import views.vectors_view as vectors_view
 import views.rasters_view as rasters_view
