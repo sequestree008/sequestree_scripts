@@ -1,5 +1,4 @@
 import streamlit as st
-st.set_page_config(layout="wide") #ok ilipat ko raw dito kasi yun na yung new rules HAHAHA
 import leafmap.foliumap as foliumap
 import folium
 from branca.colormap import linear
