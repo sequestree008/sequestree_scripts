@@ -1,5 +1,6 @@
 import geopandas as gpd  
 import streamlit as st
+st.set_page_config(layout="wide") # ok ilipat daw dito because of the new rules HAHAHA
 import folium
 import mapclassify
 from folium.features import GeoJsonTooltip
@@ -7,7 +8,7 @@ from branca.colormap import StepColormap
 from streamlit_folium import st_folium
 
 def run(files, field_color_col, fields_alias_map: dict, legend):
-    st.set_page_config(layout="wide")
+   
 
     gpkg_files = files
 
