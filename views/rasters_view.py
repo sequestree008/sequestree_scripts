@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(layout="wide") #ok ilipat ko raw dito kasi yun na yung new rules HAHAHA
 import leafmap.foliumap as foliumap
 import folium
 from branca.colormap import linear
@@ -6,7 +7,6 @@ from leafmap.foliumap import SplitControl
 import config
 
 def run(rasters, caption, range_min, range_max):
-    st.set_page_config(layout="wide")
 
     biomass_rasters = rasters
 
