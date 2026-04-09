@@ -22,7 +22,7 @@ def run(rasters, caption, range_min, range_max):
     print(f"Right year files: {biomass_rasters[right_year]}")
     print(f"TiTiler endpoint: {config.TITILER_SERVER}")
     
-   m.split_map(
+    m.split_map(
         left_layer=biomass_rasters[left_year],
         right_layer=biomass_rasters[right_year],
         left_args={'palette': 'Greens', 
