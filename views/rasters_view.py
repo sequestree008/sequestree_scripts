@@ -31,7 +31,7 @@ def run(rasters, caption, range_min, range_max):
         left_args={'palette': 'Greens', 
                    'vmin': range_min, 
                    'vmax': range_max,
-                   'titiler_endpoint': endpoint},
+                   'titiler_endpoint': config.TITILER_SERVER},
         right_args={'palette': 'Greens', 
                    'vmin': range_min, 
                    'vmax': range_max,
