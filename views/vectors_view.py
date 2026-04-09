@@ -7,8 +7,7 @@ from branca.colormap import StepColormap
 from streamlit_folium import st_folium
 
 def run(files, field_color_col, fields_alias_map: dict, legend):
-    st.set_page_config(layout="wide")
-
+   
     gpkg_files = files
 
     selected_year = st.selectbox("Select Year", list(gpkg_files.keys()), index=len(gpkg_files)-1)

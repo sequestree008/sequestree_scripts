@@ -1,4 +1,5 @@
 import streamlit as st
+st.set_page_config(layout="wide") #ok ilipat ko raw dito kasi yun na yung new rules HAHAHA (bonakid, tama na pala yung ginawa ko kanina.)
 from data_resolver import *
 import views.vectors_view as vectors_view
 import views.rasters_view as rasters_view
@@ -20,7 +21,7 @@ def build_year_dict(ext):
 option_selected = st.sidebar.selectbox("Choose:", list(OPTION_MAP.keys()), format_func=map_to_value(OPTION_MAP))
 if option_selected == "RASTERS":
     # there are different sidebar options
-    # above ground biomass, tree cabon seq potential
+    # above ground biomass, tree carbon sequestration potential
     data_type = st.sidebar.selectbox("Data Type:", list(AGB_DATA_TYPE_MAP.keys()), format_func=map_to_value(AGB_DATA_TYPE_MAP), key="_sq_data_type")
     model = st.sidebar.selectbox("Model:", list(MODEL_MAP.keys()), format_func=map_to_value(MODEL_MAP), key="_sq_model")
 
@@ -28,6 +29,8 @@ if option_selected == "RASTERS":
 
     ext = ".tif"
     files = build_year_dict(ext)
+
+#    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
 
     min, max = AGB_DATA_TYPE_MIN_MAX[data_type]
     caption = AGB_DATA_TYPE_CAPTION[data_type]
@@ -45,6 +48,8 @@ elif option_selected == "VECTORS":
     ext = ".gpkg"
     files = build_year_dict(ext)
 
+#    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
+    
     fields = VECTOR_FIELDS[view_type][data_type]
     field_colored = VECTOR_FIELDS_COLORED[data_type]
     legend = VECTOR_DATA_TYPE_CAPTION[data_type]

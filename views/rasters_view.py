@@ -9,7 +9,6 @@ def check_titiler():
     return config.TITILER_SERVER
 
 def run(rasters, caption, range_min, range_max):
-    st.set_page_config(layout="wide")
 
     biomass_rasters = rasters
 
@@ -25,9 +24,7 @@ def run(rasters, caption, range_min, range_max):
     print(f"Left year files: {biomass_rasters[left_year]}")
     print(f"Right year files: {biomass_rasters[right_year]}")
     print(f"TiTiler endpoint: {config.TITILER_SERVER}")
-
-    endpoint = check_titiler()
-
+    
     m.split_map(
         left_layer=biomass_rasters[left_year],
         right_layer=biomass_rasters[right_year],
@@ -36,9 +33,9 @@ def run(rasters, caption, range_min, range_max):
                    'vmax': range_max,
                    'titiler_endpoint': endpoint},
         right_args={'palette': 'Greens', 
-                    'vmin': range_min, 
-                    'vmax': range_max,
-                    'titiler_endpoint': endpoint},
+                   'vmin': range_min, 
+                   'vmax': range_max,
+                  'titiler_endpoint': config.TITILER_SERVER},
     )
     colormap = linear.Greens_09.scale(0, 2500)
     colormap.caption = caption
