@@ -5,4 +5,4 @@ updates as of 01/22/26
 
 updates as of 04/09/26
 
-- updated the titiler server
+- updated the titiler server (e1 q na)
