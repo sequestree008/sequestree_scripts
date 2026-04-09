@@ -5,4 +5,6 @@ updates as of 01/22/26
 
 updates as of 04/09/26
 
-- updated the titiler server (e1 q na)
+- updated TiTiler server
+- updated dependencies
+- moved TiTiler server declaration to environment variable
