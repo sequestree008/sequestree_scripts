@@ -22,41 +22,22 @@ def run(rasters, caption, range_min, range_max):
     print(f"Right year files: {biomass_rasters[right_year]}")
     print(f"TiTiler endpoint: {config.TITILER_SERVER}")
     
-# Assuming your function looks like: def run(files, caption, min, max):
-import leafmap.foliumap as leafmap
-
-# 1. Create the map (check if you use 'm' or 'map')
-m = leafmap.Map() 
-
-try:
-    # 2. Try the split map using the 'files' you passed in
-    m.split_map(
-        left_layer=files[left_year], 
-        right_layer=files[right_year],
-        left_args={'palette': 'Greens', 'name': 'Left'},
-        right_args={'palette': 'Greens', 'name': 'Right'}
+   m.split_map(
+        left_layer=biomass_rasters[left_year],
+        right_layer=biomass_rasters[right_year],
+        left_args={'palette': 'Greens', 
+                   'vmin': range_min, 
+                   'vmax': range_max,
+                   'titiler_endpoint': config.TITILER_SERVER},
+        right_args={'palette': 'Greens', 
+                   'vmin': range_min, 
+                   'vmax': range_max,
+                  'titiler_endpoint': config.TITILER_SERVER},
     )
-except Exception as e:
-    st.error(f"Actual GIS Error: {e}")
-    st.write("Checking the first file link:")
-    st.write(list(files.values())[0]) # This prints the first link to see if it's 'clean'
-    
-   # m.split_map(
-    #   left_layer=biomass_rasters[left_year],
-      #  right_layer=biomass_rasters[right_year],
-      #  left_args={'palette': 'Greens', 
-           #        'vmin': range_min, 
-           #        'vmax': range_max,
-           #        'titiler_endpoint': config.TITILER_SERVER},
-      #  right_args={'palette': 'Greens', 
-             #       'vmin': range_min, 
-           #         'vmax': range_max,
-           #         'titiler_endpoint': config.TITILER_SERVER},
-    #)
-    #colormap = linear.Greens_09.scale(0, 2500)
-    #colormap.caption = caption
+    colormap = linear.Greens_09.scale(0, 2500)
+    colormap.caption = caption
 
-    #m.add_colorbar(colors=colormap.colors, vmin=range_min, vmax=range_max, caption=caption)
+    m.add_colorbar(colors=colormap.colors, vmin=range_min, vmax=range_max, caption=caption)
 
     m.to_streamlit(height=600)
 
