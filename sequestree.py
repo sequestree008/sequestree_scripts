@@ -30,7 +30,7 @@ if option_selected == "RASTERS":
     ext = ".tif"
     files = build_year_dict(ext)
 
-    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
+#    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
 
     min, max = AGB_DATA_TYPE_MIN_MAX[data_type]
     caption = AGB_DATA_TYPE_CAPTION[data_type]
@@ -48,7 +48,7 @@ elif option_selected == "VECTORS":
     ext = ".gpkg"
     files = build_year_dict(ext)
 
-    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
+#    files = {year: url.replace("/refs/heads/", "/") for year, url in files.items()} # cleaning code for problematic github links
     
     fields = VECTOR_FIELDS[view_type][data_type]
     field_colored = VECTOR_FIELDS_COLORED[data_type]
