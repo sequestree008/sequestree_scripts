@@ -21,23 +21,35 @@ def run(rasters, caption, range_min, range_max):
     print(f"Left year files: {biomass_rasters[left_year]}")
     print(f"Right year files: {biomass_rasters[right_year]}")
     print(f"TiTiler endpoint: {config.TITILER_SERVER}")
-
+    
+try:
     m.split_map(
-       left_layer=biomass_rasters[left_year],
+        left_layer=biomass_rasters[left_year],
         right_layer=biomass_rasters[right_year],
-        left_args={'palette': 'Greens', 
-                   'vmin': range_min, 
-                   'vmax': range_max,
-                   'titiler_endpoint': config.TITILER_SERVER},
-        right_args={'palette': 'Greens', 
-                    'vmin': range_min, 
-                    'vmax': range_max,
-                    'titiler_endpoint': config.TITILER_SERVER},
+        left_args={'palette': 'Greens', 'name': 'Left'},
+        right_args={'palette': 'Greens', 'name': 'Right'}
     )
-    colormap = linear.Greens_09.scale(0, 2500)
-    colormap.caption = caption
+except Exception as e:
+    st.error(f"Real Error: {e}")
+    st.write(f"Left Link being used: {biomass_rasters[left_year]}")
+    st.write(f"Right Link being used: {biomass_rasters[right_year]}")
+    
+   # m.split_map(
+    #   left_layer=biomass_rasters[left_year],
+      #  right_layer=biomass_rasters[right_year],
+      #  left_args={'palette': 'Greens', 
+           #        'vmin': range_min, 
+           #        'vmax': range_max,
+           #        'titiler_endpoint': config.TITILER_SERVER},
+      #  right_args={'palette': 'Greens', 
+             #       'vmin': range_min, 
+           #         'vmax': range_max,
+           #         'titiler_endpoint': config.TITILER_SERVER},
+    #)
+    #colormap = linear.Greens_09.scale(0, 2500)
+    #colormap.caption = caption
 
-    m.add_colorbar(colors=colormap.colors, vmin=range_min, vmax=range_max, caption=caption)
+    #m.add_colorbar(colors=colormap.colors, vmin=range_min, vmax=range_max, caption=caption)
 
     m.to_streamlit(height=600)
 
