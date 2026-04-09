@@ -86,6 +86,7 @@ VECTOR_DATA_TYPE_CAPTION = {
     "POTENTIAL": "Tree Carbon Sequestration Potential"
 }
 
-TITILER_SERVER = "https://sequestree-titiler-endpoint.hf.space"
-#Replaced the titiler server
-#TITILER_SERVER = "https://titiler.xyz/"
+import os
+TITILER_SERVER = os.environ.get("TITILER_ENDPOINT")
+if TITILER_SERVER == None:
+    raise TypeError("TITILER_ENDPOINT not set in environment variable! Please set up a valid TiTiler endpoint and assign it to the TITILER_ENDPOINT environment variable.")
