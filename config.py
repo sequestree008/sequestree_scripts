@@ -86,4 +86,6 @@ VECTOR_DATA_TYPE_CAPTION = {
     "POTENTIAL": "Tree Carbon Sequestration Potential"
 }
 
-TITILER_SERVER = "https://sequestree-titiler-endpoint.hf.space"
+#TITILER_SERVER = "https://sequestree-titiler-endpoint.hf.space"
+#Replaced the titiler server
+TITILER_SERVER = "https://titiler.xyz"
