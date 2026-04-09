@@ -5,6 +5,9 @@ from branca.colormap import linear
 from leafmap.foliumap import SplitControl
 import config
 
+def check_titiler():
+    return config.TITILER_SERVER
+
 def run(rasters, caption, range_min, range_max):
 
     biomass_rasters = rasters

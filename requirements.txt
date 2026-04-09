@@ -16,11 +16,11 @@ fiona==1.9.4 #ito dinagdag
 pyogrio==0.6.0 #ito dinagdag
 
 # Mapping and visualization
-folium==0.15.1
+folium==0.20.0
 branca==0.7.2
-leafmap==0.40.0
+leafmap==0.61.1
 mapclassify==2.6.1
-streamlit-folium==0.20.0
+streamlit-folium==0.25.0
 
 # Tiles
 localtileserver==0.10.6
