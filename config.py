@@ -10,6 +10,12 @@ AGB_DATA_TYPE_MIN_MAX = {
     "POTENTIAL": (0, 2)
 }
 
+# if only i knew how to get the mix max of each map ;-;
+AGB_MODEL_TYPE_MIN_MAX = {
+    "RF": (0, 2500),
+    "HYBRID": (0, 4000)
+}
+
 AGB_DATA_TYPE_CAPTION = {
     "AGB": "Aboveground Biomass (kg)",
     "POTENTIAL": "Tree Carbon Sequestration Potential"

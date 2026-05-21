@@ -34,6 +34,9 @@ if option_selected == "RASTERS":
 
     min, max = AGB_DATA_TYPE_MIN_MAX[data_type]
     caption = AGB_DATA_TYPE_CAPTION[data_type]
+    if (data_type == "AGB"): # code held up by hopes and dreams
+        # someone has to do this the proper way or i'll do it myself after a million years
+        min, max = AGB_MODEL_TYPE_MIN_MAX[model]
 
     print(f"The files are is {files}")
 
