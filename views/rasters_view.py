@@ -37,7 +37,7 @@ def run(rasters, caption, range_min, range_max):
                    'vmax': range_max,
                   'titiler_endpoint': config.TITILER_SERVER},
     )
-    colormap = linear.Greens_09.scale(0, 2500)
+    colormap = linear.Greens_09.scale(range_min, range_max)
     colormap.caption = caption
 
     m.add_colorbar(colors=colormap.colors, vmin=range_min, vmax=range_max, caption=caption)
