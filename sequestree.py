@@ -5,7 +5,7 @@ import views.vectors_view as vectors_view
 import views.rasters_view as rasters_view
 from config import *
 
-st.title("Geospatial Analysis of Tree Carbon Sequestration in Quezon City, Philippines Using a Hybrid Machine Learning-Geostatistical Framework for Data-Driven Climate Action")
+st.title("Geospatial Analysis of Tree Carbon Sequestration in Quezon City, Philippines Using Hybrid Machine Learning-Geostatistical and Multicriteria Decision Framework for Data-Driven Climate Action")
 
 # options
 data_resolver = DataResolver(RemoteDataResolver())
